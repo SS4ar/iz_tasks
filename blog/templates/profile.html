@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <style>
+        body{
+            background-color: #330329;
+            color: #fff;
+        }
+
+        body a{
+            color: #05f248;
+        }
+
+        hr{
+            background-color: #1f0413;
+        }
+
+        .info{
+            background-color: #4b1031;
+            border: 1px solid #05f248;
+            border-radius: 5px;
+        }
+
+        .search-btn{
+            background-color: #05f248;
+        }
+
+        .search-input{
+            background-color: #4b1031;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light header">
+        <div class="container">
+          <a class="feature-icon" href="/profile">Profile</a>
+          <a class="feature-icon" href="/">Blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+<div class="container mt-5">
+    <div class="info container row mt-4">
+        <div class="col-md-6 mx-auto">
+            <div class="p-3">
+                <h4 style="text-align: center;">Profile</h4>
+                <div style="text-align: center" class="container">
+                    <img style="height: 150px; width: 150px;" src="/static/ava.jpg" alt="no picture :(">
+                </div>
+                <div class="container">
+                    <br>
+                    <p style="font-size: 18px;">Nickname: {{username}}</p>
+                    <br>
+                    <p style="font-size: 18px;">{{flag}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

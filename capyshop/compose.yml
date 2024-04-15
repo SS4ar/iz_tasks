@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: postgres
+    build: ./db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 3x4mP1eP4sS
+
+  web:
+    image: bsns
+    ports:
+      - 8090:8090

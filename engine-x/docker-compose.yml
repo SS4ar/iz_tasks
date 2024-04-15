@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  server:
+    image: cotsom/engine-x
+    build: .
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8070:80"

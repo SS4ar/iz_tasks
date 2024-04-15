@@ -1,0 +1,26 @@
+<% if logged_in? %>
+  <br><br>
+  <div class="container">
+    Here is your passwords:
+    <br><br>
+    <div class="row">
+      <% current_user.secrets.each do |s| %>
+        <%= puts s.id%>
+        <div class="col-md-4">
+          <div class="card border-primary mb-3">
+            <div class="card-header"><%= s.domain %> </div>
+            <div class="card-body">
+              <p class="card-text"><%= s.password %></p>
+            </div>
+            <a rel="nofollow" class="btn btn-primary" data-method="delete" href="/secrets/<%= s.id%>">delete</a>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-md-4">
+        <%= render 'shared/secret_form' %>
+      </div>
+    </div>
+  </div>
+<% else %>
+    redirect_to root
+<% end %>

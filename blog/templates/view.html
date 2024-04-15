@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light header">
+        <div class="container">
+          <a class="feature-icon" href="/profile">Profile</a>
+          <a class="feature-icon" href="/">Blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1>{{ post.title }}</h1>
+        <img src="{{ post.src }}" alt="{{ post.title }}" class="img-fluid mt-3 mb-3">
+        <p>{{ post.content }}</p>
+
+        <h2 class="mt-4">Comments</h2>
+
+        {% for comment in comments %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="card-text">{{ comment.text }}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <h2 class="mt-4">Add a Comment</h2>
+        <form class="commentForm" id="commentForm">
+            <input type="hidden" id="idInput" name="id" value="{{ post.id | int}}">
+            <br>
+            <label for="textInput">Text:</label>
+            <textarea id="textInput" name="text" rows="5" cols="40" required></textarea>
+            <br>
+            <button class="comment-btn" type="button" onclick="submitComment()">Submit Comment</button>
+        </form>
+    
+        <script>
+            function submitComment() {
+                var id = document.getElementById('idInput').value;
+                var text = document.getElementById('textInput').value;
+    
+                var formData = new FormData();
+                formData.append('id', parseInt(id, 10));
+                formData.append('text', text);
+    
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/comment', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-yaml');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            alert('Comment submitted successfully!');
+                            location.reload(true);
+                        } else {
+                            alert('Error: ' + xhr.responseText);
+                        }
+                    }
+                };
+                xhr.send(payload(formData));
+            }
+    
+            function payload(data) {
+                var yaml = "comment:\n";
+    
+                for (var pair of data.entries()) {
+                    var key = pair[0];
+                    var value = pair[1];
+    
+                    if (typeof value === 'string') {
+                        value = '"' + value + '"';
+                    }
+    
+                    yaml += `  ${key}: ${value}\n`;
+                }
+    
+                return yaml;
+            }
+        </script>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

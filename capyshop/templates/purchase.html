@@ -1,0 +1,101 @@
+{{ template "head-style" . }}
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            width: 100%; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: left; 
+            max-width: 100%;
+        } 
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            text-align: right;
+        } 
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info span {
+            margin-right: 20px;
+        }
+
+        .user-info .btn-logout {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+		
+		.descr_within .btn {
+			background-color: #25ac62;
+			border-color: #27b331;
+			font-size: 24px;
+			margin-top: 100%;
+		}
+		
+		.descr_within h2 {
+			margin-top: 20%;
+		}
+		
+
+        body {
+            background-color: bisque;
+        }
+
+        main {
+            margin-top: 10%;
+        }
+        
+        footer {
+            text-align: right
+        }
+		
+		.product {
+			max-width: 400px;  
+			height: auto;
+		}
+		
+		.descript {
+		    display: flex;
+			width: 100%;
+            align-items: center;
+		}
+		
+		.descr_within {
+			display: flex;
+			width: 50%;
+			height: 100%;
+			align-items: center;
+			flex-direction: column;
+			justify-content: space-around;
+        }
+    </style>
+{{template "main" . }}
+			<div class="descript">
+				<img class="product" src="{{ .ImageURL }}" />
+				<div class="descr_within">
+				<h1>{{ .Name }}</h1>
+				<h3>Price: ${{ .Price }}</h3>
+				<form action="/buy" method="post">
+                    <input type="submit" class="btn btn-logout" value="BUY">
+                    <input type="hidden" name="productID" value="{{ .ID }}">
+                    <input type="hidden" name="promo" value="">
+                </form>
+                <h4>{{.error}}</h4>
+				</div>
+			</div>
+        {{ template "footer" . }}

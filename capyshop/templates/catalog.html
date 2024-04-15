@@ -1,0 +1,37 @@
+{{ template "head-style" . }}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .product-image {
+        max-width: 100px; 
+        height: auto; 
+    }
+</style>
+{{ template "main" . }}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {{ range .products }}
+    <tr>
+        <td>{{ .Name }}</td>
+        <td>{{ .Price }}</td>
+        <td><img src="{{ .ImageURL }}" class="product-image" alt="{{ .Name }}"></td>
+        <td><a href="/purchase?productID={{ .ID }}">View</a></td>
+    </tr>
+    {{ end }}
+</table>       
+{{ template "footer" . }}

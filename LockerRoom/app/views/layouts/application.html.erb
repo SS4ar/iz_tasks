@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LockerRoom</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>body{background: url(assets/lockerroom.jpg); background-size: cover;} </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <div class="col text-left">
+            <% if logged_in? %>
+              <a class="blog-header-logo text-white"><%= current_user.username%></a>
+            <% end %>
+          </div>
+          <div class="col text-center">
+            <a class="blog-header-logo text-white" href="#">Locker Room</a>
+          </div>
+          <div class="col text-right">
+            <% if logged_in? %>
+              <a class="btn btn-primary text-white" href="/logout">Exit<a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
+    <%= flashed %>
+    <%= yield %>
+  </body>
+</html>

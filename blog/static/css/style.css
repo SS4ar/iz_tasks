@@ -1,0 +1,64 @@
+body{
+    background-color: #330329;
+    color: #fff;
+}
+
+body a{
+    color: #05f248;
+}
+
+.navbar-nav{
+    color: #05f248;
+}
+
+hr{
+    background-color: #330329;
+}
+
+p{
+    margin-bottom: 0rem
+}
+
+ul {  
+    list-style-type: none;  
+}  
+
+.info{
+    background-color: #0d2738;
+    border: 1px solid #05f248;
+    border-radius: 5px;
+}
+
+.search-btn{
+    background-color: #05f248;
+}
+
+.search-input{
+    background-color: #0d2738;
+}
+
+.p-3{
+    text-align: center;
+}
+
+.card{
+    border: 1px solid #05f248;
+    background-color: #4b1031;
+    color: #fff;
+}
+
+.logo{
+    color: #05f248;
+}
+
+.btn{
+    border: 1px solid #05f248;
+    background-color: #330329;
+    color: #05f248;
+}
+
+.btn:hover{
+    background-color: #270829;
+    border: 1px solid #05f248;
+    color: #05f248;
+}

@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_USER=root
+      - MONGO_PASS=password
+      - PYTHONUNBUFFERED=1
+      - FLAG=flag{auth_bypass_wn312n3j21h}
+  
+  notfound:
+    build: ./not-found
+    container_name: notfound
+    environment:
+      - FLAG=flag{ssti_flask_awdwanh233}
+
+  comment:
+    build: ./comment
+    container_name: comment
+    environment:
+      - FLAG=flag{yaml_injection_awjdkwajdakdl}  
+
+  images:
+    build: ./images
+    container_name: images
+    environment:
+      - FLAG=flag{local_file_read_adwajdadaljawd}  
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./db/init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro

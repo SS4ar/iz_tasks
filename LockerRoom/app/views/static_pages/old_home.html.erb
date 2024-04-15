@@ -1,0 +1,29 @@
+<% if logged_in? %>
+  <h1>You are in the Locker Room, <%= current_user.username %></h1>
+  <br><br>
+  Here is your passwords:
+  <br><br>
+  <table border="1">
+    <thead><th>Domain</th><th>Password</th></thead>
+    <tbody>
+      <% current_user.secrets.each do |s| %>
+        <tr>
+          <td><%= s.domain%></td>
+          <td><%= s.password%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br><br>
+  <div class="row">
+    <aside class="col-md-4">
+      <selection class="secret_form">
+      <%= render 'shared/secret_form' %>
+      </selection>
+    </aside>
+  </div>
+  <br><br>
+  <%= button_to "Log out", "/logout", method: :delete %>
+<% else %>
+    redirect_to root
+<% end %>

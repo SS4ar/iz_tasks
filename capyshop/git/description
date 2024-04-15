@@ -1,0 +1,24 @@
+#ToDo
+
+- [ ] Implement the discount feature for Capibar online store.
+- [ ] Create a user-friendly interface for customers to apply discounts during checkout.
+- [ ] Ensure the discount feature calculates the correct reduced prices.
+- [ ] Test the discount functionality thoroughly to catch any bugs or issues.
+- [ ] Prepare documentation for the discount feature for future reference.
+
+## Promo Code
+
+- [ ] Conduct testing to confirm that the "CAPYDISCOUNT" promo code works seamlessly.
+
+## General Development Tasks
+
+- [ ] Address any existing bugs or issues in the online store.
+- [ ] Optimize website performance to ensure smooth user experience.
+- [ ] Keep codebase up-to-date with the latest security patches and libraries.
+- [ ] Monitor server stability and scalability to handle increased traffic.
+
+## Miscellaneous
+
+- [ ] Coordinate with the marketing team to promote the upcoming discount feature.
+- [ ] Collaborate with the design team if any UI/UX changes are required.
+- [ ] Document any changes or updates made to the online store's codebase.

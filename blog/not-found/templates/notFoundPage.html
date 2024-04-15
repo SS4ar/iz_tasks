@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #040c1f;
+        color: #fff;
+    }
+
+    body a{
+        color: #05f2f2;
+    }
+
+
+    .container {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 6em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.5em;
+        margin-top: 0;
+    }
+
+    a {
+        color: #05f2f2;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <div class="not-found">
+    {% block content %}
+    <div class="text">
+        <h1>404 Error</h1>  
+    <h2>Couldn't launch :(</h2>
+        <h3>Page {{page}} Not Found</h3> 
+    </div>
+    {% endblock %}
+    <p>Go to <a href="/">Main Page</a>.</p>   
+    </div>
+</body>
+
+</html>
