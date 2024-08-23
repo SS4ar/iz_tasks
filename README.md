@@ -1,8 +1,8 @@
 # Requirements
-https://www.netexec.wiki/getting-started/installation/installation-on-unix
-https://github.com/topotam/PetitPotam
-https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Rubeus.exe
-https://github.com/ParrotSec/mimikatz/blob/master/x64/mimikatz.exe
+[NXC](https://www.netexec.wiki/getting-started/installation/installation-on-unix)
+[PetitPotam](https://github.com/topotam/PetitPotam)
+[Rubeus](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Rubeus.exe)
+[mimikatz](https://github.com/ParrotSec/mimikatz/blob/master/x64/mimikatz.exe)
 
 
 ## Первый вариант взятия ДОМЕН АДМИНА
